@@ -1,5 +1,6 @@
 .*
 !.gitignore
 
+css/bootstrap-extension.css
 bower_components
 node_modules
