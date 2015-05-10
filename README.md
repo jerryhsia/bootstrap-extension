@@ -1,2 +1,2 @@
 # bootstrap-extension
-Extended Bootstrap components and Javascript plugin
+Extended Bootstrap components and Javascript plugins

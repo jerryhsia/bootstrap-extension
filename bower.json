@@ -1,0 +1,15 @@
+{
+  "name": "bootstrap-extension",
+  "version": "1.0.0",
+  "description": "Extended Bootstrap components and Javascript plugins",
+  "homepage": "https://github.com/jerryhsia/bootstrap-extension",
+  "license": "MIT",
+  "author": {
+    "name": "Jerry Hsia",
+    "email": "jerry9916@qq.com"
+  },
+  "dependencies": {
+    "jquery": ">= 1.9.0",
+    "bootstrap": ">= 3.3.0"
+  }
+}
