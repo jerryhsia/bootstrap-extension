@@ -1,0 +1,22 @@
+.feed-group {
+  overflow: hidden;
+  .feed {
+    margin-bottom: @feed-margin-bottom;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+.feed {
+  .common-list(@feed-avatar-width, @feed-avatar-width);
+  .summary {
+    margin-bottom: 10px;
+    .time {
+      font-size: @font-size-small;
+      color: @gray-light;
+    }
+  }
+  .content {
+    margin-bottom: 10px;
+  }
+}
