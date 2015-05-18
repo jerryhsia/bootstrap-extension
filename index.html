@@ -39,8 +39,8 @@
       <div class="row">
         <div class="col-sm-9">
           <h1 id="components">Components</h1>
-          <h2>Feed</h2>
-          <div id="Feed">
+          <h2>Feed <button class="btn btn-primary view-source" source-id="feed">View source</button></h2>
+          <div id="feed">
             <div class="feed-group">
               <div class="feed">
                 <div class="list-left">
@@ -54,7 +54,7 @@
                     Great! Jerry has 100 friends now.
                   </div>
                   <div class="meta">
-                    <a href="#" class="like"><i class="glyphicon glyphicon-heart"></i> 10 Likes </a>
+                    <a href="#"><i class="glyphicon glyphicon-heart"></i> 10 Likes </a>
                   </div>
                 </div>
               </div>
@@ -74,7 +74,7 @@
                     </div>
                   </div>
                   <div class="meta">
-                    <a href="#" class="like"><i class="glyphicon glyphicon-heart"></i> 10 Likes </a>
+                    <a href="#"><i class="glyphicon glyphicon-heart"></i> 10 Likes </a>
                   </div>
                 </div>
               </div>
@@ -94,7 +94,16 @@
     <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
     <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script>
-      
+      var statusMap = {
+        
+      };
+      $('.view-source').bind('click', function() {
+        var sourceId = $(this).attr('source-id');
+        var html = $('#'+sourceId).html();
+        html = html.replace(/</g, '&lt;');
+        html = html.replace(/>/g, '&gt;');
+        $(this).after('<pre>'+html+'</pre>');
+      });
     </script>
   </body>
 </html>
