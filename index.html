@@ -14,6 +14,9 @@
         min-height: 2000px;
         padding-top: 70px;
       }
+      .source {
+        margin: 15px 0;
+      }
     </style>
   </head>
   <body>
@@ -38,8 +41,8 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-9">
-          <h1 id="components">Components</h1>
-          <h2>Feed <button class="btn btn-primary view-source" source-id="feed">View source</button></h2>
+          <h1 id="components">1. Components</h1>
+          <h2>1.1 Feed <button class="btn btn-primary view-source" source-id="feed">View source</button></h2>
           <div id="feed">
             <div class="feed-group">
               <div class="feed">
@@ -64,7 +67,7 @@
                 </div>
                 <div class="list-right">
                   <div class="summary">
-                    <a href="#"> Jerry </a> uploaded two photos to album <a href="#">《My Life》</a> <span class="time">-an hour ago</span>
+                    <a href="#"> Jerry </a> uploaded two photos to album <a href="#">My Life</a> <span class="time">-an hour ago</span>
                   </div>
                   <div class="content">
                     There are many photos of my life here.
@@ -82,10 +85,10 @@
           </div>
         </div>
         <div class="col-sm-3">
-          <h3>Components</h3>
+          <h3>1. Components</h3>
           <div class="list-group">
             <a href="#" class="list-group-item">
-              Feed
+              1.1 Feed
             </a>
           </div>
         </div>
@@ -95,14 +98,28 @@
     <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script>
       var statusMap = {
-        
+
       };
       $('.view-source').bind('click', function() {
         var sourceId = $(this).attr('source-id');
-        var html = $('#'+sourceId).html();
-        html = html.replace(/</g, '&lt;');
-        html = html.replace(/>/g, '&gt;');
-        $(this).after('<pre>'+html+'</pre>');
+        var viewId = 'view-'+sourceId;
+        if (typeof statusMap[sourceId] === 'undefined') {
+          var html = $('#'+sourceId).html();
+          html = html.replace(/</g, '&lt;');
+          html = html.replace(/>/g, '&gt;');
+          $(this).after('<pre id="'+viewId+'" class="source">'+html+'</pre>');
+          $(this).html('Close source');
+          statusMap[sourceId] = true;
+        } else {
+          if (statusMap[sourceId]) {
+            $('#'+viewId).hide();
+            $(this).html('View source');
+          } else {
+            $('#'+viewId).show();
+            $(this).html('Close source');
+          }
+          statusMap[sourceId] = !statusMap[sourceId];
+        }
       });
     </script>
   </body>
