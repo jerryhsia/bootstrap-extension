@@ -46,10 +46,10 @@
           <div id="feed">
             <div class="feed-group">
               <div class="feed">
-                <div class="left">
-                  <img class="img-circle" src="http://7xl4ip.com1.z0.glb.clouddn.com/images/jerry.jpg">
+                <div class="left-area">
+                  <img class="img-circle" src="http://7xl4ip.com1.z0.glb.clouddn.com/images/avatar-1.jpg">
                 </div>
-                <div class="right">
+                <div class="right-area">
                   <div class="summary">
                     <a href="#"> Jerry </a> added you as a friend <span class="time">-an hour ago</span>
                   </div>
@@ -62,12 +62,12 @@
                 </div>
               </div>
               <div class="feed">
-                <div class="left">
-                  <img class="img-circle" src="http://7xl4ip.com1.z0.glb.clouddn.com/images/jerry.jpg">
+                <div class="left-area">
+                  <img class="img-circle" src="http://7xl4ip.com1.z0.glb.clouddn.com/images/avatar-2.jpg">
                 </div>
-                <div class="right">
+                <div class="right-area">
                   <div class="summary">
-                    <a href="#"> Jerry </a> uploaded two photos to album <a href="#">My Life</a> <span class="time">-an hour ago</span>
+                    <a href="#"> Tom </a> uploaded two photos to album <a href="#">My Life</a> <span class="time">-an hour ago</span>
                   </div>
                   <div class="content">
                     There are many photos of my life here.
@@ -83,12 +83,104 @@
               </div>
             </div>
           </div>
+          <h2>1.2 Comment <button class="btn btn-primary view-source" source-id="comment">View source</button></h2>
+          <div id="comment">
+            <div class="comment-group">
+              <div class="comment">
+                <div class="left-area">
+                  <img src="http://7xl4ip.com1.z0.glb.clouddn.com/images/avatar-1.jpg">
+                </div>
+                <div class="right-area">
+                  <div class="summary">
+                    <a href="#"> Jerry </a> commented <span class="time">-an hour ago</span>
+                  </div>
+                  <div class="content">
+                    I'm very fond of writing code.
+                  </div>
+                  <div class="meta">
+                    <a href="#"><i class="glyphicon glyphicon-share-alt"></i> Reply</a>
+                  </div>
+                  <div class="comments">
+                    <div class="comment">
+                      <div class="left-area">
+                        <img src="http://7xl4ip.com1.z0.glb.clouddn.com/images/avatar-2.jpg">
+                      </div>
+                      <div class="right-area">
+                        <div class="summary">
+                          <a href="#"> Tom </a> replied <span class="time">-an hour ago</span>
+                        </div>
+                        <div class="content">
+                          Me too.
+                        </div>
+                        <div class="meta">
+                          <a href="#"><i class="glyphicon glyphicon-share-alt"></i> Reply</a>
+                        </div>
+                        <div class="comments">
+                          <div class="comment">
+                            <div class="left-area">
+                              <img src="http://7xl4ip.com1.z0.glb.clouddn.com/images/avatar-1.jpg">
+                            </div>
+                            <div class="right-area">
+                              <div class="summary">
+                                <a href="#"> Tom </a> replied <span class="time">-an hour ago</span>
+                              </div>
+                              <div class="content">
+                                Nice, so we write code together.
+                              </div>
+                              <div class="meta">
+                                <a href="#"><i class="glyphicon glyphicon-share-alt"></i> Reply</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="comment">
+                      <div class="left-area">
+                        <img src="http://7xl4ip.com1.z0.glb.clouddn.com/images/avatar-2.jpg">
+                      </div>
+                      <div class="right-area">
+                        <div class="summary">
+                          <a href="#"> Tom </a> replied <span class="time">-an hour ago</span>
+                        </div>
+                        <div class="content">
+                          Me too.
+                        </div>
+                        <div class="meta">
+                          <a href="#"><i class="glyphicon glyphicon-share-alt"></i> Reply</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="comment">
+                <div class="left-area">
+                  <img src="http://7xl4ip.com1.z0.glb.clouddn.com/images/avatar-2.jpg">
+                </div>
+                <div class="right-area">
+                  <div class="summary">
+                    <a href="#"> Jerry </a> commented <span class="time">-an hour ago</span>
+                  </div>
+                  <div class="content">
+                    Thank you for sharing this article.
+                  </div>
+                  <div class="meta">
+                    <a href="#"><i class="glyphicon glyphicon-share-alt"></i> Reply</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="col-sm-3">
           <h3>1. Components</h3>
           <div class="list-group">
-            <a href="#" class="list-group-item">
+            <a href="#feed" class="list-group-item">
               1.1 Feed
+            </a>
+            <a href="#comment" class="list-group-item">
+              1.2 Comment
             </a>
           </div>
         </div>
@@ -97,14 +189,15 @@
     <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
     <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script>
-      var statusMap = {
-
-      };
+      var statusMap = {};
       $('.view-source').bind('click', function() {
         var sourceId = $(this).attr('source-id');
         var viewId = 'view-'+sourceId;
         if (typeof statusMap[sourceId] === 'undefined') {
           var html = $('#'+sourceId).html();
+          var indentSpace = html.indexOf('<') - 1;
+          var reg = eval("/\\s{"+indentSpace+"}</gim");
+          html = html.replace(reg, '<');
           html = html.replace(/</g, '&lt;');
           html = html.replace(/>/g, '&gt;');
           $(this).after('<pre id="'+viewId+'" class="source">'+html+'</pre>');
