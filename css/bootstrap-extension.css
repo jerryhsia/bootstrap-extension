@@ -1,0 +1,118 @@
+.be.comment-group {
+  overflow: hidden;
+}
+.be.comment-group .comment:last-child {
+  margin-bottom: 0;
+}
+.be.comment {
+  float: left;
+  width: 100%;
+  padding: 15px 0;
+}
+.be.comment .left-area {
+  position: relative;
+  z-index: 1;
+  float: left;
+  width: 70px;
+}
+.be.comment .left-area img {
+  width: 70px;
+  height: 70px;
+}
+.be.comment .right-area {
+  float: left;
+  width: 100%;
+  padding-left: 85px;
+  margin-left: -70px;
+}
+.be.comment .summary {
+  margin-bottom: 7px;
+}
+.be.comment .summary .time {
+  font-size: 12px;
+  color: #777777;
+}
+.be.comment .content {
+  margin-bottom: 7px;
+}
+.be.comment .comments .comment:last-child {
+  padding-bottom: 0;
+}
+.be.divider {
+  display: table;
+  width: 100%;
+  height: auto;
+  white-space: nowrap;
+  line-height: 1;
+  text-align: center;
+}
+.be.divider .before {
+  overflow: hidden;
+  position: relative;
+  display: table-cell;
+  content: '';
+  width: 50%;
+  height: 100%;
+}
+.be.divider .before .line {
+  left: -10px;
+}
+.be.divider .after {
+  overflow: hidden;
+  position: relative;
+  display: table-cell;
+  content: '';
+  width: 50%;
+  height: 100%;
+}
+.be.divider .after .line {
+  right: -10px;
+}
+.be.divider .line {
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px solid #777777;
+}
+.be.feed-group {
+  overflow: hidden;
+}
+.be.feed-group .feed:last-child {
+  margin-bottom: 0;
+}
+.be.feed {
+  float: left;
+  width: 100%;
+  padding: 15px 0;
+}
+.be.feed .left-area {
+  position: relative;
+  z-index: 1;
+  float: left;
+  width: 70px;
+}
+.be.feed .left-area img {
+  width: 70px;
+  height: 70px;
+}
+.be.feed .right-area {
+  float: left;
+  width: 100%;
+  padding-left: 85px;
+  margin-left: -70px;
+}
+.be.feed .summary {
+  margin-bottom: 7px;
+}
+.be.feed .summary .time {
+  font-size: 12px;
+  color: #777777;
+}
+.be.feed .content {
+  margin-bottom: 7px;
+}
+.be.feed .content .images img {
+  height: 80px;
+}
