@@ -9,6 +9,10 @@
     "name": "Jerry Hsia",
     "email": "jerry9916@qq.com"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jerryhsia/bootstrap-extension"
+  },
   "main": [
     "less/bootstrap-extension.less"
   ],

@@ -2,12 +2,11 @@
 var path = require('path');
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
+var rev = require('gulp-rev');
 
 var app = {
   src: '',
-  bower: 'bower_components/',
   dist: 'dist/',
-  tmp: '.tmp/',
   env: 'dev'
 };
 
@@ -44,4 +43,30 @@ gulp.task('less', function () {
     .pipe(gulp.dest(app.src + 'css/'))
 });
 
+gulp.task('useref', ['less'], function () {
+  var assets = $.useref.assets();
+  return gulp.src(app.src + 'index.html')
+    .pipe(assets)
+    .pipe(assets.restore())
+    .pipe($.useref())
+    .pipe($.if('*.js', gulp.dest(dist())))
+    .pipe($.if('*.css', gulp.dest(dist())))
+    .pipe($.if('*.js', $.uglify()))
+    .pipe($.if('*.js', $.rename({suffix: '.min'})))
+    .pipe($.if('*.js', gulp.dest(dist())))
+    .pipe($.if('*.css', $.csso()))
+    .pipe($.if('*.css', $.rename({suffix: '.min'})))
+    .pipe($.if('*.css', gulp.dest(dist())))
+    .pipe($.if('*.html', gulp.dest(dist())));
+});
+
 gulp.task('default', ['less', 'connect', 'watch']);
+
+gulp.task('build', ['env:prod'], function() {
+  return gulp.start('useref');
+});
+
+gulp.task('deploy', function() {
+  return gulp.src(app.dist+'**/*')
+    .pipe($.ghPages());
+});
