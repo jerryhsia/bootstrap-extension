@@ -23,8 +23,6 @@ Usage
 ```
 - See the [Demo](http://jerryhsia.github.io/bootstrap-extension/) to get more.
 
-- Import editor module
-
 Implemented components and Javascript plugins
 ---
 
