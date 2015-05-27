@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Bootstrap extension</title>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap-extension.css">
+    <style>
+      body {
+        min-height: 2000px;
+        padding-top: 70px;
+      }
+      .source {
+        margin: 15px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Bootstrap extension</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#components">Components</a></li>
+            <li><a href="https://github.com/jerryhsia/bootstrap-extension"><i class="glyphicon glyphicon-eye-open"></i> Github</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-9">
+          <h1>How to use</h1>
+          <pre class="source">
+&lt;!--Import stylesheets--&gt;
+&lt;link href="/path/to/bootstarp/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;link href="/path/to/bootstrap-extension/dist/css/bootstrap-extension.min.css" rel="stylesheet"&gt;
+          </pre>
+          <h1 id="components">Components</h1>
+          <h2>Divider <button class="btn btn-primary view-source" source-id="divider">View source</button></h2>
+          <div id="divider">
+            <div class="be divider">
+              <div class="before">
+                <span class="line"></span>
+              </div>
+              <i class="glyphicon glyphicon-gift"></i> My gift
+              <div class="after">
+                <span class="line"></span>
+              </div>
+            </div>
+          </div>
+          <h2>Feed <button class="btn btn-primary view-source" source-id="feed">View source</button></h2>
+          <div id="feed">
+            <div class="be feed-group">
+              <div class="be feed">
+                <div class="left-area">
+                  <img class="img-circle" src="http://7xl4ip.com1.z0.glb.clouddn.com/images/avatar-1.jpg">
+                </div>
+                <div class="right-area">
+                  <div class="summary">
+                    <a href="#"> Jerry </a> added you as a friend <span class="time">-an hour ago</span>
+                  </div>
+                  <div class="content">
+                    Great! Jerry has 100 friends now.
+                  </div>
+                  <div class="meta">
+                    <a href="#"><i class="glyphicon glyphicon-heart"></i> 10 Likes </a>
+                  </div>
+                </div>
+              </div>
+              <div class="be feed">
+                <div class="left-area">
+                  <img class="img-circle" src="http://7xl4ip.com1.z0.glb.clouddn.com/images/avatar-2.jpg">
+                </div>
+                <div class="right-area">
+                  <div class="summary">
+                    <a href="#"> Tom </a> uploaded two photos to album <a href="#">My Life</a> <span class="time">-an hour ago</span>
+                  </div>
+                  <div class="content">
+                    There are many photos of my life here.
+                    <div class="images">
+                      <img src="http://7xl4ip.com1.z0.glb.clouddn.com/images/image-1.png">
+                      <img src="http://7xl4ip.com1.z0.glb.clouddn.com/images/image-2.png">
+                    </div>
+                  </div>
+                  <div class="meta">
+                    <a href="#"><i class="glyphicon glyphicon-heart"></i> 10 Likes </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h2>Comment <button class="btn btn-primary view-source" source-id="comment">View source</button></h2>
+          <div id="comment">
+            <div class="be comment-group">
+              <div class="be comment">
+                <div class="left-area">
+                  <img src="http://7xl4ip.com1.z0.glb.clouddn.com/images/avatar-1.jpg">
+                </div>
+                <div class="right-area">
+                  <div class="summary">
+                    <a href="#"> Jerry </a> commented <span class="time">-an hour ago</span>
+                  </div>
+                  <div class="content">
+                    I'm very fond of writing code.
+                  </div>
+                  <div class="meta">
+                    <a href="#"><i class="glyphicon glyphicon-share-alt"></i> Reply</a>
+                  </div>
+                  <div class="comments">
+                    <div class="be comment">
+                      <div class="left-area">
+                        <img src="http://7xl4ip.com1.z0.glb.clouddn.com/images/avatar-2.jpg">
+                      </div>
+                      <div class="right-area">
+                        <div class="summary">
+                          <a href="#"> Tom </a> replied <span class="time">-an hour ago</span>
+                        </div>
+                        <div class="content">
+                          Me too.
+                        </div>
+                        <div class="meta">
+                          <a href="#"><i class="glyphicon glyphicon-share-alt"></i> Reply</a>
+                        </div>
+                        <div class="comments">
+                          <div class="be comment">
+                            <div class="left-area">
+                              <img src="http://7xl4ip.com1.z0.glb.clouddn.com/images/avatar-1.jpg">
+                            </div>
+                            <div class="right-area">
+                              <div class="summary">
+                                <a href="#"> Tom </a> replied <span class="time">-an hour ago</span>
+                              </div>
+                              <div class="content">
+                                Nice, so we write code together.
+                              </div>
+                              <div class="meta">
+                                <a href="#"><i class="glyphicon glyphicon-share-alt"></i> Reply</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="be comment">
+                      <div class="left-area">
+                        <img src="http://7xl4ip.com1.z0.glb.clouddn.com/images/avatar-2.jpg">
+                      </div>
+                      <div class="right-area">
+                        <div class="summary">
+                          <a href="#"> Tom </a> replied <span class="time">-an hour ago</span>
+                        </div>
+                        <div class="content">
+                          Me too.
+                        </div>
+                        <div class="meta">
+                          <a href="#"><i class="glyphicon glyphicon-share-alt"></i> Reply</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="be comment">
+                <div class="left-area">
+                  <img src="http://7xl4ip.com1.z0.glb.clouddn.com/images/avatar-2.jpg">
+                </div>
+                <div class="right-area">
+                  <div class="summary">
+                    <a href="#"> Jerry </a> commented <span class="time">-an hour ago</span>
+                  </div>
+                  <div class="content">
+                    Thank you for sharing this article.
+                  </div>
+                  <div class="meta">
+                    <a href="#"><i class="glyphicon glyphicon-share-alt"></i> Reply</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <h3>Components</h3>
+          <div class="list-group">
+            <a href="#divider" class="list-group-item">
+              Divider
+            </a>
+            <a href="#feed" class="list-group-item">
+              Feed
+            </a>
+            <a href="#comment" class="list-group-item">
+              Comment
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script>
+      var statusMap = {};
+      $('.view-source').bind('click', function() {
+        var sourceId = $(this).attr('source-id');
+        var viewId = 'view-'+sourceId;
+        if (typeof statusMap[sourceId] === 'undefined') {
+          var html = $('#'+sourceId).html();
+          var indentSpace = html.indexOf('<') - 1;
+          var reg = eval("/\\s{"+indentSpace+"}</gim");
+          html = html.replace(reg, '<');
+          html = html.replace(/</g, '&lt;');
+          html = html.replace(/>/g, '&gt;');
+          $(this).after('<pre id="'+viewId+'" class="source">'+html+'</pre>');
+          $(this).html('Close source');
+          statusMap[sourceId] = true;
+        } else {
+          if (statusMap[sourceId]) {
+            $('#'+viewId).hide();
+            $(this).html('View source');
+          } else {
+            $('#'+viewId).show();
+            $(this).html('Close source');
+          }
+          statusMap[sourceId] = !statusMap[sourceId];
+        }
+      });
+    </script>
+  </body>
+</html>
