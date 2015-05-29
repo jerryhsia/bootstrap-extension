@@ -2,5 +2,6 @@
 *.log
 !.gitignore
 css/
+!dist/css/
 bower_components/
 node_modules/
