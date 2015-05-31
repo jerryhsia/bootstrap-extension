@@ -20,15 +20,21 @@ Usage
 ```html
 <link href="/path/to/bootstarp/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="/path/to/bootstrap-extension/dist/css/bootstrap-extension.min.css" rel="stylesheet">
+<script src="/path/to/bootstrap-extension/dist/js/bootstrap-extension.min.js"></script>
 ```
 - See the [Demo](http://jerryhsia.github.io/bootstrap-extension/) to get more.
 
-Implemented components and Javascript plugins
+Implemented
 ---
+## Components
 
 - Divider
 - Feed
 - Comment
+
+## Javascript plugins
+
+- Sticky
 
 TODO
 ---

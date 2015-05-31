@@ -36,6 +36,12 @@ gulp.task('connect', function () {
   });
 });
 
+gulp.task('jshint', function () {
+  return gulp.src(app.src + 'js/*.js')
+    .pipe($.jshint())
+    .pipe($.jshint.reporter(require('jshint-stylish')));
+});
+
 gulp.task('less', function () {
   return gulp.src(app.src + 'less/bootstrap-extension.less')
     .pipe($.less())
@@ -60,9 +66,9 @@ gulp.task('useref', ['less'], function () {
     .pipe($.if('*.html', gulp.dest(dist())));
 });
 
-gulp.task('default', ['less', 'connect', 'watch']);
+gulp.task('default', ['jshint', 'less', 'connect', 'watch']);
 
-gulp.task('build', ['env:prod'], function() {
+gulp.task('build', ['env:prod', 'jshint'], function() {
   return gulp.start('useref');
 });
 
