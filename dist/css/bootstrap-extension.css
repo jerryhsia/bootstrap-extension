@@ -116,3 +116,6 @@
 .be.feed .content .images img {
   height: 80px;
 }
+.be.sticky {
+  z-index: 999;
+}
