@@ -9,13 +9,21 @@
     <title>Bootstrap extension</title>
     <link href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap-extension.css">
+    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-extension.js"></script>
     <style>
       body {
-        min-height: 2000px;
         padding-top: 70px;
+        padding-bottom: 70px;;
       }
       .source {
         margin: 15px 0;
+      }
+      #sticky-box {
+        padding: 15px;;
+        border-radius: 3px;;
+        background-color: #ccc;
       }
     </style>
   </head>
@@ -47,6 +55,7 @@
 &lt;!--Import stylesheets--&gt;
 &lt;link href="/path/to/bootstarp/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
 &lt;link href="/path/to/bootstrap-extension/dist/css/bootstrap-extension.min.css" rel="stylesheet"&gt;
+&lt;script src="/path/to/bootstrap-extension/dist/js/bootstrap-extension.min.css"&gt;&lt;/script&gt;
           </pre>
           <h1 id="components">Components</h1>
           <h2>Divider <button class="btn btn-primary view-source" source-id="divider">View source</button></h2>
@@ -191,6 +200,21 @@
               </div>
             </div>
           </div>
+          <h1>Javascript plugins</h1>
+          <h2>Sticky <button class="btn btn-primary view-source" source-id="sticky">View source</button></h2>
+          <div id="sticky">
+            <div id="sticky-box" class="be sticky">
+              I'm a sticky box! When rolling to my position, I can be fixed to the top!
+            </div>
+            <script>
+              $(document).ready(function() {
+                $('#sticky-box').sticky({
+                  top: 70 // After reaching the top of this distance is fixed
+                });
+              });
+            </script>
+          </div>
+          <div style="height: 3000px;"></div>
         </div>
         <div class="col-sm-3">
           <h3>Components</h3>
@@ -205,11 +229,15 @@
               Comment
             </a>
           </div>
+          <h3>Javascript plugins</h3>
+          <div class="list-group">
+            <a href="#sticky" class="list-group-item">
+              Sticky
+            </a>
+          </div>
         </div>
       </div>
     </div>
-    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-    <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script>
       var statusMap = {};
       $('.view-source').bind('click', function() {
