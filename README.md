@@ -15,7 +15,7 @@ Installation
 
 Usage
 ---
-- Import script and style files
+- Import stylesheet and script files
  
 ```html
 <link href="/path/to/bootstarp/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -26,13 +26,14 @@ Usage
 
 Implemented
 ---
-## Components
+
+### Components
 
 - Divider
 - Feed
 - Comment
 
-## Javascript plugins
+### Javascript plugins
 
 - Sticky
 
