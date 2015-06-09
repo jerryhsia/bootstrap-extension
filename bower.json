@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-extension",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Extended Bootstrap components and Javascript plugins",
   "keywords": ["bootstrap", "bootstrap extension", "bootstrap plugin"],
   "homepage": "https://github.com/jerryhsia/bootstrap-extension",
@@ -18,7 +18,7 @@
   ],
   "ignore": [
   ],
-  "dependencies": {
+  "devDependencies": {
     "jquery": ">= 1.9.0",
     "bootstrap": ">= 3.3.0"
   }
