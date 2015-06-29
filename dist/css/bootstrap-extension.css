@@ -38,6 +38,16 @@
 .be.comment .comments .comment:last-child {
   padding-bottom: 0;
 }
+.be.comment-form .meta {
+  margin-top: 10px;
+}
+.be.comment-form .user img {
+  width: 35px;
+  height: 35px;
+}
+.be.comment-form .btn-submit {
+  float: right;
+}
 .be.divider {
   position: relative;
   overflow: hidden;
