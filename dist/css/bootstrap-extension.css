@@ -38,6 +38,16 @@
 .be.comment .comments .comment:last-child {
   padding-bottom: 0;
 }
+.be.comment .reply {
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border-left: 3px solid #777777;
+  font-size: 14px;
+  color: #777777;
+}
+.be.comment .meta {
+  font-size: 12px;
+}
 .be.comment-form .meta {
   margin-top: 10px;
 }
